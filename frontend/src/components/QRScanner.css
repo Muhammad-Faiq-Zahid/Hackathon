@@ -1,0 +1,252 @@
+.qr-scanner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.scanner-container {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.scanner-animation {
+  position: relative;
+  margin: 30px auto;
+  max-width: 400px;
+}
+
+.scanner-frame {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border: 3px solid #1976d2;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(25, 118, 210, 0.05);
+}
+
+.scanning-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #1976d2, transparent);
+  animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+  0% { top: 0; }
+  100% { top: 100%; }
+}
+
+.corner {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 5px solid #1976d2;
+}
+
+.corner.top-left {
+  top: -3px;
+  left: -3px;
+  border-right: none;
+  border-bottom: none;
+  border-top-left-radius: 8px;
+}
+
+.corner.top-right {
+  top: -3px;
+  right: -3px;
+  border-left: none;
+  border-bottom: none;
+  border-top-right-radius: 8px;
+}
+
+.corner.bottom-left {
+  bottom: -3px;
+  left: -3px;
+  border-right: none;
+  border-top: none;
+  border-bottom-left-radius: 8px;
+}
+
+.corner.bottom-right {
+  bottom: -3px;
+  right: -3px;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 8px;
+}
+
+.scan-instruction {
+  margin-top: 25px;
+  font-size: 1.2rem;
+  color: #1976d2;
+  font-weight: 600;
+}
+
+.demo-section {
+  margin: 40px 0;
+  padding: 25px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 2px dashed #ddd;
+}
+
+.demo-section h3 {
+  color: #1976d2;
+  margin-top: 0;
+}
+
+.demo-note {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.demo-qr-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.demo-qr-btn {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.demo-qr-btn:hover {
+  border-color: #1976d2;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.demo-qr-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.qr-icon {
+  font-size: 2.5rem;
+  margin-right: 15px;
+}
+
+.qr-info {
+  flex: 1;
+}
+
+.qr-info strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.qr-info small {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.scanning-indicator {
+  color: #1976d2;
+  font-size: 0.9rem;
+  font-weight: bold;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.manual-scan {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.manual-scan h4 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.manual-input {
+  width: 70%;
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+.manual-submit {
+  padding: 12px 24px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.manual-submit:hover {
+  background: #1565c0;
+  transform: translateY(-2px);
+}
+
+.how-it-works {
+  margin-top: 40px;
+  padding: 25px;
+  background: linear-gradient(135deg, #f0f7ff 0%, #e3f2fd 100%);
+  border-radius: 10px;
+  border-left: 5px solid #1976d2;
+}
+
+.how-it-works h3 {
+  color: #1976d2;
+  margin-top: 0;
+}
+
+.how-it-works ol {
+  text-align: left;
+  padding-left: 25px;
+  margin: 20px 0 0 0;
+}
+
+.how-it-works li {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .scanner-frame {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .demo-qr-buttons {
+    grid-template-columns: 1fr;
+  }
+  
+  .manual-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .manual-submit {
+    width: 100%;
+  }
+}
